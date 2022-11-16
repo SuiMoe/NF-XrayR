@@ -79,7 +79,7 @@ fi
 
 port=$(netstat -nltp | grep XrayR | awk '{print $4}' | sed 's/://g')
 
-sed -i "s/8080/${port}/g" /etc/caddy/Caddyfile
+sed -i "s/XPORT/${port}/g" /etc/caddy/Caddyfile
 
 caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
 
